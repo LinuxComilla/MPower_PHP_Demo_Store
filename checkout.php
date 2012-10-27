@@ -6,7 +6,7 @@ require('conf.php');
 $co = new MPower_Checkout_Invoice();
 $total_amount = 0;
 foreach ($_SESSION["cart"] as $product) {
-  $co->addItem($product['name'],$product['quantity'],$product['price'],$product['total_price']);
+  $co->addItem($product['name'],$product['quantity'],$product['unit_price'],$product['total_price']);
   $total_amount += $product['total_price'];
 }
 
