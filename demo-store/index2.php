@@ -102,9 +102,11 @@ foreach ($_SESSION["cart"] as $product) {
 <br>
 <br>
 <hr/>
-<form method="post" action="redirect_checkout.php">
+<form method="post" action="onsite_checkout.php">
 <input type="hidden" value="ok" name="checkout">
-<input type="submit" value="Redirect Checkout With MPower" class="checkout"> or <a href="index2.php" title="Onsite Redirect">Onsite Checkout with MPower</a>
+<label for="account_alias">Account Alias (Username or Phone)</label>
+<input type="text" name="account_alias" value="" placeholder="Customer Account Alias">
+<input type="submit" value="Onsite Checkout With MPower" class="checkout"> or <a href="index.php" title="Onsite Redirect">Redirect Checkout with MPower</a>
 </form>
 <?php } ?>
 </div>

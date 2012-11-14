@@ -1,9 +1,9 @@
 <?php
-MPower_Setup::setMasterKey("YOUR_API_MASTER_KEY");
-MPower_Setup::setPublicKey("YOUR_API_PUBLIC_KEY");
-MPower_Setup::setPrivateKey("YOUR_API_PRIVATE_KEY");
+MPower_Setup::setMasterKey("82403450-ee3a-4c57-9564-a8fbe30c5fb7");
+MPower_Setup::setPublicKey("test_public_M6-fRS1RCnzlGqgeLaBF5vLLoKs");
+MPower_Setup::setPrivateKey("test_private_jKxSyaylcQdrQcuxAOFAbxvK5w4");
 MPower_Setup::setMode("test");
-MPower_Setup::setToken("YOUR_API_TOKEN");
+MPower_Setup::setToken("7f6c81c1ea223674416e");
 
 // Configure Checkout Store
 MPower_Checkout_Store::setName("Awesome Online Store");

@@ -1,18 +1,18 @@
 <?php
 class MPower_Checkout_Invoice extends MPower_Checkout {
 
-  private $items = array();
-  private $total_amount = 0.0;
-  private $taxes = array();
-  private $description;
-  private $currency = "ghs";
-  private $cancel_url;
-  private $return_url;
-  private $invoice_url;
-  private $custom_data;
-  private $receipt_url;
+  protected $items = array();
+  protected $total_amount = 0.0;
+  protected $taxes = array();
+  protected $description;
+  protected $currency = "ghs";
+  protected $cancel_url;
+  protected $return_url;
+  protected $invoice_url;
+  protected $custom_data;
+  protected $receipt_url;
 
-  private $customer = array();
+  protected $customer = array();
 
   function __construct(){
     $this->cancel_url = MPower_Checkout_Store::getCancelUrl();
@@ -81,7 +81,7 @@ class MPower_Checkout_Invoice extends MPower_Checkout {
     return $this->customer[$info_type];
   }
 
-  public function setCustomData($name,$value) {
+  public function addCustomData($name,$value) {
     $this->custom_data->set($name,$value);
   }
 
@@ -113,8 +113,12 @@ class MPower_Checkout_Invoice extends MPower_Checkout {
     return $this->status;
   }
 
-  public function confirm() {
-    $token = $_GET['token'];
+  public function confirm($token="") {
+    $token = trim($token);
+    if (empty($token)) {
+      $token = $_GET['token'];
+    }
+    
     $result = MPower_Utilities::httpGetRequest(MPower_Setup::getCheckoutConfirmUrl().$token);
     if(count($result) > 0) {
       switch ($result['status']) {
@@ -173,6 +177,7 @@ class MPower_Checkout_Invoice extends MPower_Checkout {
     switch ($result["response_code"]) {
       case 00:
         $this->status = "success";
+        $this->token = $result["token"];
         $this->response_code = $result["response_code"];
         $this->response_text = $result["description"];
         $this->invoice_url = $result["response_text"];
