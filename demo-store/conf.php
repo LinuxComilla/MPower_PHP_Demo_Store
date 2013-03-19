@@ -1,7 +1,7 @@
 <?php
 MPower_Setup::setMasterKey("82403450-ee3a-4c57-9564-a8fbe30c5fb7");
 MPower_Setup::setPublicKey("test_public_M6-fRS1RCnzlGqgeLaBF5vLLoKs");
-MPower_Setup::setPrivateKey("test_private_jKxSyaylcQdrQcuxAOFAbxvK5w4");
+MPower_Setup::setPrivateKey("test_private_jKxSnaylcQdrQcuxAOFAbxvK5w4");
 MPower_Setup::setMode("test");
 MPower_Setup::setToken("7f6c81c1ea223674416e");
 
