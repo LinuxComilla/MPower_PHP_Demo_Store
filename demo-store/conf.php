@@ -1,9 +1,10 @@
 <?php
-MPower_Setup::setMasterKey("82403450-ee3a-4c57-9564-a8fbe30c5fb7");
-MPower_Setup::setPublicKey("test_public_M6-fRS1RCnzlGqgeLaBF5vLLoKs");
-MPower_Setup::setPrivateKey("test_private_jKxSn3ylcQdrQcuxAOFAbxvK5w4");
-MPower_Setup::setMode("test");
-MPower_Setup::setToken("7f6c81c1ea223674416e");
+require('mpower_php/mpower.php');
+MPower_Setup::setMasterKey("dd6f2c90-f075-012f-5b69-00155d866600");
+MPower_Setup::setPublicKey("live_public_xDPNs0zAJ856YfC3z6rBwGsjqBA");
+MPower_Setup::setPrivateKey("live_private_0mhrAda3hiiEfIirJYRC7w77moY");
+MPower_Setup::setMode("live");
+MPower_Setup::setToken("d13ab6c069296cfff556");
 
 // Configure Checkout Store
 MPower_Checkout_Store::setName("Awesome Online Store");

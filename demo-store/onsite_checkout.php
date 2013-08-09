@@ -1,6 +1,5 @@
 <?php
 session_start();
-require('mpower_php/mpower.php');
 require('conf.php');
 
 $co = new MPower_Onsite_Invoice();
